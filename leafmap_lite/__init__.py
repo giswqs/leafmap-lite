@@ -4,11 +4,10 @@ __author__ = """Qiusheng Wu"""
 __email__ = 'giswqs@gmail.com'
 __version__ = '0.0.5'
 
-import asyncio
 import sys
 
 
-async def is_jupyterlite():
+async def install_pkgs():
     """Check if the current environment is JupyterLite."""
 
     import piplite
@@ -20,6 +19,6 @@ async def is_jupyterlite():
 
 
 if "pyodide" in sys.modules:
-    asyncio.run(is_jupyterlite())
+    install_pkgs()
 
     
