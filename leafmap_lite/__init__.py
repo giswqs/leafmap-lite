@@ -17,8 +17,9 @@ async def install_pkgs():
     await piplite.install('pyproj', deps=False)
     await piplite.install('geopandas', deps=False)
 
-
-if "pyodide" in sys.modules:
-    install_pkgs()
-
     
+if "pyodide" in sys.modules:
+    # pyodide doesn't support numpy, so we need to install it separately
+    # and then import it.
+    import pyodide
+    pyodide.runPython("import piplite; piplite.install('leafmap', deps=False)")
