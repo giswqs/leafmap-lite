@@ -53,6 +53,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/giswqs/leafmap-lite',
-    version='0.0.7',
+    version='0.1.0',
     zip_safe=False,
 )
